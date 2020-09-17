@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import Aux from '../hoc/Aux';
+import { Link } from 'react-router-dom';
 //import styled from 'styled-components';
 
 class homeScreen extends Component{
@@ -25,10 +26,13 @@ class homeScreen extends Component{
         return(
             <Aux>
                 <div>
-                <h3>Hi There! Welcome to Education showcase</h3>
-                <h5>Type your name and click enter</h5>
-                <input type="text" value={this.state.name} onChange={this.copyHandler}/>
-                <div><button onClick={this.setNameHandler}>Click Enter</button></div>
+                <h3>Hi There! Welcome to your education showcase</h3>
+                <h5>Type your name and click "Enter" to begin!</h5>
+                <input type="text" value={this.state.name} onChange={this.copyHandler} placeholder='Your Name'/>
+                <div><br></br></div>
+                <div><Link 
+                to={'/mainscreen/'+this.state.name}
+                ><button onClick={this.setNameHandler}>Enter</button></Link></div>
                 </div>
             </Aux>
         )

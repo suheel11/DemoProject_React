@@ -6,7 +6,11 @@ const school = (props)=>{
     
     return(
         <div onClick={props.clicked}>
-            {props.detail.nameOfSchool}
+            <ul>
+                <li>
+                    {props.detail.nameOfSchool}
+                </li>
+            </ul>
         </div>
     )
 }
